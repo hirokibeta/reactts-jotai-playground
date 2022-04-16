@@ -1,17 +1,21 @@
 import { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from '@src/routes';
-import { ErrorFallback } from '@src/common/components/ErrorFallback';
+import { Provider } from 'jotai';
 import { AppThemeProvider } from '@src/common/components/AppThemeProvider';
+import { Loading } from './common/components/Loading';
 
+// TODO: error boundary
 export function App() {
   return (
-    <Suspense fallback={ErrorFallback()}>
+    <Provider>
       <AppThemeProvider>
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
+        <Suspense fallback={Loading()}>
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </Suspense>
       </AppThemeProvider>
-    </Suspense>
+    </Provider>
   );
 }
