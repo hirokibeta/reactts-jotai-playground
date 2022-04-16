@@ -25,7 +25,15 @@ import { AccountMenu } from '@src/common/components/AccountMenue';
 
 const upperNavs = [{ label: 'Home', to: '/', icon: <HomeIcon /> }];
 
-const lowerNavs = [{ label: 'NotFound', to: '/not-found', icon: <HideSourceIcon /> }];
+const lowerNavs = [
+  { label: 'Jotai', to: '/jotai', icon: <span css={{ height: 24, width: 24 }}>👻</span> },
+  {
+    label: 'jotaiIssue1054',
+    to: '/jotai-issue-1054',
+    icon: <span css={{ height: 24, width: 24 }}>👻</span>,
+  },
+  { label: 'NotFound', to: '/not-found', icon: <HideSourceIcon /> },
+];
 
 const drawerWidth = 240;
 
