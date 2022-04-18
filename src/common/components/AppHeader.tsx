@@ -28,10 +28,11 @@ const upperNavs = [{ label: 'Home', to: '/', icon: <HomeIcon /> }];
 const lowerNavs = [
   { label: 'Jotai', to: '/jotai', icon: <span css={{ height: 24, width: 24 }}>👻</span> },
   {
-    label: 'jotaiIssue1054',
+    label: 'jotai Issue 1054',
     to: '/jotai-issue-1054',
     icon: <span css={{ height: 24, width: 24 }}>👻</span>,
   },
+  { label: 'React18', to: '/react18', icon: <span css={{ height: 24, width: 24 }}>🌟</span> },
   { label: 'NotFound', to: '/not-found', icon: <HideSourceIcon /> },
 ];
 
