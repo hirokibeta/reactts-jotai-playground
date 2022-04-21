@@ -7,6 +7,7 @@ import { JotaiIssues1054 } from '@src/pages/JotaiIssues1054';
 import { JotaiBug } from '@src/pages/JotaiBug';
 import { React18 } from '@src/pages/React18';
 import { JotaiLoadableBug } from '@src/pages/JotaiLoadableBug';
+import { JotaiSplitAtom } from '@src/pages/JotaiSplitAtom';
 
 export function AppRoutes() {
   const routes: RouteObject[] = [
@@ -20,6 +21,10 @@ export function AppRoutes() {
         {
           path: '/jotai',
           element: <Jotai />,
+        },
+        {
+          path: '/jotai-split-atom',
+          element: <JotaiSplitAtom />,
         },
         {
           path: '/jotai-issue-1054',
