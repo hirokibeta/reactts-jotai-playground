@@ -3,6 +3,15 @@ import { Box } from '@mui/material';
 import { atom, useAtom } from 'jotai';
 import React, { Suspense } from 'react';
 
+// add start
+// 最初にnullableAtomがuseAtomされないとダメ
+const dummyAtom = atom('dummy atom');
+function DummyViewer() {
+  const [other] = useAtom(dummyAtom);
+  return <h3>{other}</h3>;
+}
+// add end
+
 const INITIAL_VALUE = null;
 const nullableAtom = atom<number | null>(INITIAL_VALUE);
 
@@ -60,9 +69,10 @@ function SuspenseFallback() {
   return <h3>Suspense</h3>;
 }
 
-export function JotaiIssues1054() {
+export function JotaiBug() {
   return (
     <Box>
+      <DummyViewer />
       <AtomController />
       <NullableViewer />
       <Suspense fallback={<SuspenseFallback />}>

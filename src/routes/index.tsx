@@ -4,7 +4,9 @@ import { Home } from '@src/pages/Home';
 import { NotFound } from '@src/pages/NotFound';
 import { Jotai } from '@src/pages/Jotai';
 import { JotaiIssues1054 } from '@src/pages/JotaiIssues1054';
+import { JotaiBug } from '@src/pages/JotaiBug';
 import { React18 } from '@src/pages/React18';
+import { JotaiLoadableBug } from '@src/pages/JotaiLoadableBug';
 
 export function AppRoutes() {
   const routes: RouteObject[] = [
@@ -22,6 +24,14 @@ export function AppRoutes() {
         {
           path: '/jotai-issue-1054',
           element: <JotaiIssues1054 />,
+        },
+        {
+          path: '/jotai-bug',
+          element: <JotaiBug />,
+        },
+        {
+          path: '/jotai-loadable-bug',
+          element: <JotaiLoadableBug />,
         },
         {
           path: '/react18',

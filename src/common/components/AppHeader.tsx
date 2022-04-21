@@ -19,7 +19,6 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import HomeIcon from '@mui/icons-material/Home';
-import HideSourceIcon from '@mui/icons-material/HideSource';
 import { CSSObject } from '@emotion/react';
 import { AccountMenu } from '@src/common/components/AccountMenue';
 
@@ -30,10 +29,16 @@ const lowerNavs = [
   {
     label: 'jotai Issue 1054',
     to: '/jotai-issue-1054',
-    icon: <span css={{ height: 24, width: 24 }}>👻</span>,
+    icon: <span css={{ height: 24, width: 24 }}>🚩</span>,
+  },
+  { label: 'Jotai Bug', to: '/jotai-bug', icon: <span css={{ height: 24, width: 24 }}>💀</span> },
+  {
+    label: 'Jotai Loadable Bug',
+    to: '/jotai-loadable-bug',
+    icon: <span css={{ height: 24, width: 24 }}>💀</span>,
   },
   { label: 'React18', to: '/react18', icon: <span css={{ height: 24, width: 24 }}>🌟</span> },
-  { label: 'NotFound', to: '/not-found', icon: <HideSourceIcon /> },
+  { label: 'NotFound', to: '/not-found', icon: <span css={{ height: 24, width: 24 }}>🛑</span> },
 ];
 
 const drawerWidth = 240;
