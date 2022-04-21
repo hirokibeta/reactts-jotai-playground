@@ -1,6 +1,6 @@
 import { Box, Paper } from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import { AppHeader } from '@src/common/components/AppHeader';
+import { AppHeader, AppDrawerHeader } from '@src/common/components/AppHeader';
 
 export function Layout() {
   return (
@@ -8,7 +8,6 @@ export function Layout() {
       sx={{
         display: 'flex',
         minHeight: '100%',
-        overflow: 'hidden',
       }}
     >
       <AppHeader />
@@ -19,9 +18,9 @@ export function Layout() {
           flexGrow: 1,
           overflowY: 'scroll',
           padding: 2,
-          paddingTop: 10,
         }}
       >
+        <AppDrawerHeader />
         <Outlet />
       </Box>
 

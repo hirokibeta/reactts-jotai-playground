@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
@@ -122,9 +122,26 @@ function MyAppDrawer({ open, ...props }: DrawerProps) {
   );
 }
 
-export function AppHeader() {
+export function AppDrawerHeader({ children = null }: { children?: ReactNode }) {
   const theme = useTheme();
+  return (
+    <div
+      css={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        padding: theme.spacing(0, 1),
+        // necessary for content to be below app bar
+        ...(theme.mixins.toolbar as CSSObject),
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+AppDrawerHeader.defaultProps = { children: null };
 
+export function AppHeader() {
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -168,20 +185,11 @@ export function AppHeader() {
         </Toolbar>
       </MyAppBar>
       <MyAppDrawer variant="permanent" open={open}>
-        <div
-          css={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            padding: theme.spacing(0, 1),
-            // necessary for content to be below app bar
-            ...(theme.mixins.toolbar as CSSObject),
-          }}
-        >
+        <AppDrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
-        </div>
+        </AppDrawerHeader>
         <Divider />
         <List>
           {upperNavs.map(({ label, to, icon }) => (
