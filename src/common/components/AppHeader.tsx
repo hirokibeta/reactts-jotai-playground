@@ -27,6 +27,11 @@ const upperNavs = [{ label: 'Home', to: '/', icon: <HomeIcon /> }];
 const lowerNavs = [
   { label: 'Jotai', to: '/jotai', icon: <span css={{ height: 24, width: 24 }}>👻</span> },
   {
+    label: 'JotaiWithWatcher',
+    to: '/jotai-with-watcher',
+    icon: <span css={{ height: 24, width: 24 }}>🧪</span>,
+  },
+  {
     label: 'JotaiSplitAtom',
     to: '/jotai-split-atom',
     icon: <span css={{ height: 24, width: 24 }}>👻</span>,
